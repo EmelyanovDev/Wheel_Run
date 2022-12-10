@@ -9,7 +9,7 @@ namespace Player
         [SerializeField] private Vector2 _scaleBorders;
 
         private PlayerCollision _collision;
-        private float _scale = 1;
+        private float _scaleRatio = 1;
         private Vector3 _startScale;
         private Coroutine _coroutine;
 
@@ -35,11 +35,11 @@ namespace Player
 
         private void AddScale(float value)
         {
-            _scale = Mathf.Clamp(_scale + value, _scaleBorders.x, _scaleBorders.y);
-            Vector3 target = _startScale * _scale;
+            _scaleRatio = Mathf.Clamp(_scaleRatio + value, _scaleBorders.x, _scaleBorders.y);
+            Vector3 targetScale = _startScale * _scaleRatio;
             if(_coroutine != null)
                 StopCoroutine(_coroutine);
-            _coroutine = StartCoroutine(ChangeScale(target));
+            _coroutine = StartCoroutine(ChangeScale(targetScale));
         }
     }
 }

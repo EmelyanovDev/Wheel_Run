@@ -2,7 +2,7 @@
 
 namespace Utilities
 {
-    public class Rotation : MonoBehaviour
+    public class Rotator : MonoBehaviour
     {
         [SerializeField] private Vector3 _rotation;
 

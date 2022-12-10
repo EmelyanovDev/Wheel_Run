@@ -1,4 +1,5 @@
 ﻿using System;
+using Money;
 using UnityEngine;
 
 namespace Player
@@ -11,5 +12,7 @@ namespace Player
         public void SizeBoost(float scaleAdding) => AddScale?.Invoke(scaleAdding);
 
         public void Die() => PlayerDie?.Invoke();
+
+        public void AddCoin() => Wallet.AddCoin();
     }
 }
